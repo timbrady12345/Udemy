@@ -1,0 +1,33 @@
+package com.luv2code.ecommerce.entity;
+
+import java.math.BigDecimal;
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="product")
+public class Product {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
+	@Column(name = "sku")
+	private String sku;
+	@Column(name = "name")
+	private String name;
+	@Column(name = "description")
+	private String description;
+	@Column(name = "unit_price")
+	private BigDecimal unitPrice;
+	@Column(name = "active")
+	private boolean active;
+	private int unitsInStock;
+	private Date dateCreated;
+	private Date lastUpdated;
+}
